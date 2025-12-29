@@ -1,0 +1,34 @@
+##!CURRENT PHASE (VS Code lo ippude)
+
+UI common (HTML + Tailwind)
+Backend common (Flask)
+Language selector
+Python → REAL execution visualizer
+C / C++ / Java → Planned / demo output
+
+##2FINAL ARCHITECTURE (SIMPLE)
+Frontend (UI)
+   ↓
+Backend Router
+   ↓
+Language Engine
+   ├── Python Engine (REAL)
+   ├── C Engine (stub)
+   ├── Java Engine (stub)
+
+###3Folder Structure
+multi_lang_visualizer
+├── app.py
+├── templates
+│   └── index.html
+└── static
+    └── script.js
+
+###4RUN PROJECT
+pip install flask
+python app.py
+
+####5INTERVIEW GOLD LINE (REMEMBER)
+“Execution visualization is language-specific.
+I implemented a modular architecture with Python 
+execution support and extensible engines for other languages.”

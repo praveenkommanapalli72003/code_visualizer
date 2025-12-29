@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Multi-Language Code Visualizer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Custom Animations -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          animation: {
+            fade: "fadeIn 0.6s ease-in-out",
+            slide: "slideUp 0.6s ease-out"
+          },
+          keyframes: {
+            fadeIn: {
+              "0%": { opacity: 0 },
+              "100%": { opacity: 1 }
+            },
+            slideUp: {
+              "0%": { transform: "translateY(20px)", opacity: 0 },
+              "100%": { transform: "translateY(0)", opacity: 1 }
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-gradient-to-br from-gray-900 to-gray-800 min-h-screen text-white">
+
+<div class="max-w-6xl mx-auto mt-10 bg-gray-900 p-8 rounded-xl shadow-2xl animate-fade">
+
+  <h1 class="text-3xl font-bold text-center text-blue-400 mb-6">
+    🚀 Multi-Language Code Visualizer
+  </h1>
+
+  <!-- Language Selector -->
+  <select id="language"
+    class="w-full p-3 mb-4 bg-gray-800 border border-gray-600 rounded focus:outline-none">
+    <option value="python">🐍 Python (Visualizer)</option>
+    <option value="cpp">⚙️ C++ (Output)</option>
+    <option value="java">☕ Java (Output)</option>
+  </select>
+
+  <!-- Code Input -->
+  <textarea id="code" rows="8"
+    class="w-full p-4 bg-black text-green-400 font-mono rounded border border-gray-700 focus:outline-none"
+    placeholder="Paste your code here..."></textarea>
+
+  <!-- Run Button -->
+  <button onclick="runCode()"
+    class="mt-4 w-full bg-blue-600 hover:bg-blue-700 transition-all duration-300 p-3 rounded font-semibold">
+    ▶ Run & Visualize
+  </button>
+
+  <!-- Tabs -->
+  <div class="flex gap-4 mt-6">
+    <button onclick="showTab('visual')"
+      class="px-4 py-2 bg-gray-700 rounded hover:bg-gray-600 transition">
+      🧠 Visualizer
+    </button>
+    <button onclick="showTab('output')"
+      class="px-4 py-2 bg-gray-700 rounded hover:bg-gray-600 transition">
+      📤 Output
+    </button>
+  </div>
+
+  <!-- Visualizer -->
+  <div id="visual" class="mt-6 space-y-3 animate-slide"></div>
+
+  <!-- Output -->
+  <pre id="output"
+    class="mt-6 bg-black text-green-400 p-4 rounded hidden animate-slide"></pre>
+
+</div>
+
+<script src="/static/script.js"></script>
+</body>
+</html>
+
+
